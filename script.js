@@ -57,7 +57,7 @@ while (continuar) {
     } else if (opcionMenu == 2) {
 
         let metaAhorro = parseInt(prompt('¿Qué porcentaje de tus ingresos quieres separar para ahorrar? Elige entre 0 y 100 (solo números, sin puntos, ni comas ni símbolos como $ o %)'))
-        
+        valorReal = promptMonto - (totalGastos+promptAhorro)
         let ahorroCalculado = calcularAhorro (valorReal,metaAhorro);
         promptAhorro += ahorroCalculado;
         alert(`Se ha separado para ahorro el valor de $${ahorroCalculado}`);
