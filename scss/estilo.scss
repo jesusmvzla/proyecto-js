@@ -1,0 +1,32 @@
+.boton {
+    margin: 2px;
+    border-radius: 8px;
+}
+
+#container {
+    background-color: aquamarine;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px 200px;
+
+    .boton {
+        margin: 2px;
+        border-radius: 8px;
+    }
+
+    .tituloPrincipal {
+        #menuOpciones {
+            border: solid;
+            border-color: black;
+            align-items: center;
+
+        }
+    }
+}
+
+.oculto {
+    display: none;
+}
+
+.mostrar {
+    display: inline;
+}
