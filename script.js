@@ -341,8 +341,12 @@ const calcularAhorro = (ingresos, porcentaje) => (porcentaje / 100) * ingresos;
             icon: "warning"
         }).then((result) => {
             if (result.isConfirmed) {
-                localStorage.clear()
+                localStorage.clear();
                 Swal.fire("¡Sesión borrada!", "", "success");
+                menuDiv.classList.toggle("oculto");
+                botonInicio.classList.toggle("oculto");
+                textoPrincipal.textContent="";
+
             }
         });
     })
@@ -367,7 +371,12 @@ const calcularAhorro = (ingresos, porcentaje) => (porcentaje / 100) * ingresos;
                 Swal.fire("¡Sesión guardada!", "", "success");
                 menuDiv.classList.toggle("oculto");
                 botonInicio.classList.toggle("oculto");
-                textoPrincipal.innerHTML = "¡Bienvenido!"
+                textoPrincipal.innerHTML = "";
+            } else if (result.isDenied) {
+                Swal.fire("Sesión terminada");
+                menuDiv.classList.toggle("oculto");
+                botonInicio.classList.toggle("oculto");
+                textoPrincipal.innerHTML = "";
             }
         });
     })
