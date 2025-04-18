@@ -44,7 +44,7 @@ const obtenerVersion = async () => {
                 const info = data["versionAppJson"][0];
                 let mensajeVer = `Versión: ${info.ver} - ${info.name} | Número de licencia: ${info.licencia}`;
                 document.querySelector("#version").textContent = mensajeVer;
-                document.querySelector("#textoPrincipal").textContent = "¡Bienvenid@!"
+                // document.querySelector("#textoPrincipal").textContent = "¡Bienvenid@!"
                 botonInicio.classList.toggle("oculto");
             })
     } catch (error) {
@@ -130,7 +130,7 @@ botonRegistrarGasto.addEventListener("click", () => {
     nombreGastoInput.value = "";
     valorGastoInput.value = "";
 
-    textoPrincipal.innerHTML = `<p>¡Hola, <b>${nombreUsuario}</b>! <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
+    textoPrincipal.innerHTML = `<p>Hola, <b>${nombreUsuario}</b> <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
 
     console.table(gastos);
     console.log("Gastos registrados ascienden al valor de: $" + totalGastos);
@@ -209,7 +209,7 @@ botonRegistrarIngreso.addEventListener("click", () => {
     valorReal += valorIngreso
     console.log("Nuevos ingresos disponibles: $" + valorReal);
     valorIngresoInput.value = "";
-    textoPrincipal.innerHTML = `<p>¡Hola, <b>${nombreUsuario}</b>! <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
+    textoPrincipal.innerHTML = `<p>Hola, <b>${nombreUsuario}</b> <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
 })
 
 // Opción 3 - Establecer meta de ahorro
@@ -257,7 +257,7 @@ botonRegistrarAhorro.addEventListener("click", () => {
     console.log(porcentajeAhorroValor)
     console.log(ahorroCalculado)
     console.log(valorAhorro)
-    textoPrincipal.innerHTML = `<p>¡Hola, <b>${nombreUsuario}</b>! <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
+    textoPrincipal.innerHTML = `<p>Hola, <b>${nombreUsuario}</b> <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
 })
 
 // Opción 4 - retirar monto desde ahorros
@@ -268,7 +268,7 @@ let textoRetirarAhorro = document.querySelector("#textoRetirarAhorro");
 // Botón para aparecer inputs de retiro de ahorro
 boton4.addEventListener("click", () => {
     retirarAhorroDiv.classList.toggle("oculto");
-    textoRetirarAhorro.innerHTML = `<b>¡Recuerda evitar retirar tus ahorros al menos que sea una urgencia!</b> <br> Tus ahorros disponibles son <b>$${valorAhorro}</b>.
+    textoRetirarAhorro.innerHTML = `<b>¡Recuerda evitar retirar tus ahorros al menos que sea una urgencia!</b> <br> Tus ahorros disponibles son: <b>$${valorAhorro}</b>
 <br>Introduce el valor que deseas regresar a tus ingresos disponibles (solo números, sin puntos, ni comas ni símbolos como $):`
     boton1.classList.toggle("oculto");
     botonVerGasto.classList.toggle("oculto");
@@ -305,7 +305,7 @@ botonRetirarAhorro.addEventListener("click", () => {
 
     console.log(valorAhorro);
     console.log(valorReal);
-    textoPrincipal.innerHTML = `<p>¡Hola, <b>${nombreUsuario}</b>! <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
+    textoPrincipal.innerHTML = `<p>Hola, <b>${nombreUsuario}</b><br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
 })
 
 // Opción 5 - para guardar datos
@@ -416,7 +416,7 @@ const validarSesion = () => {
                 console.log(`Esta sesión ahora se encuentra bajo el usuario ${nombreUsuario}`);
                 console.log(`Esta sesión tiene ahora un presupuesto inicial de $${valorReal}`);
                 Swal.fire(`¡Bienvenido a SimpleBudget ${nombreUsuario}!`);
-                textoPrincipal.innerHTML = `<p>¡Hola, <b>${nombreUsuario}</b>! <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
+                textoPrincipal.innerHTML = `<p>Hola, <b>${nombreUsuario}</b><br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
                 nuevaSesionDiv.classList.toggle("oculto");
                 menuDiv.classList.toggle("oculto");
 
@@ -438,9 +438,7 @@ const validarSesion = () => {
         console.log("Ahorros disponibles al cerrar la app: $" + valorAhorro);
         console.log("Gastos registrados al cerrar la app: $" + totalGastos);
 
-        textoPrincipal.innerHTML = `<p>¡Hola de nuevo, <b>${nombreUsuario}</b>! <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b> </p>`;
-        // alert(`Hola de nuevo ${nombreUsuario}, hemos cargado tus datos de la sesión anterior, ya puedes continuar.`)
-        // disparadorMenu();
+        textoPrincipal.innerHTML = `Hola de nuevo, <b>${nombreUsuario}</b> <br> Ingresos disponibles: <b>$${valorReal}</b> <br> Gastos registrados: <b>$${totalGastos}</b> <br> Ahorro disponible: <b>$${valorAhorro}</b>`;
     }
 
 }

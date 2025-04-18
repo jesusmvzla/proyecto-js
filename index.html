@@ -15,98 +15,107 @@
 
 <body>
 
-    <div id="container">
-        <div class="row mx-auto tituloPrincipal">
-            <p>Simple Budget</p>
-            <p id="version">Comprobando versión y licencia, por favor espera...</p>
-            <div class="col pantallaApp">
-                <div>
-                    <p id="textoPrincipal"></p>
-                </div>
-                <button id="iniciar" class="boton">Iniciar Sesión</button>
+    <div id="background">
 
-                <div id="nuevaSesion" class="oculto">
-                    <p>No hemos encontrado una sesión anterior. <br> <b>¡Diligencia los siguientes datos para
-                            comenzar!</b></p>
-                    <p>Nombre de usuario</p>
-                    <input name="nombre de usuario" id="nombreUsuario">
-                    <p>Introduce el valor neto de sus ingresos mensuales (solo números, sin puntos, ni comas, ni
-                        símbolos como $):</p>
-                    <input name="monto disponible" id="montoDisponible">
-                    <button id="registrarUsuario" class="boton">Ingresar</button>
-                </div>
+        <div id="container">
+            <div id="logo">
+                <img src="./img/logo.jpeg" alt="Simple Budget Logo">
+
+            </div>
+            <p id="nombreApp">Simple Budget</p>
+            <div class="tituloPrincipal">
+                <p id="version">Comprobando versión y licencia, por favor espera...</p>
+                <div id="pantallaPrincipal" class="pantallaApp">
+                    <div>
+                        <p id="textoPrincipal"></p>
+                    </div>
+                    <button id="iniciar" class="boton">Iniciar Sesión</button>
+
+                    <div id="nuevaSesion" class="oculto">
+                        <p>No hemos encontrado una sesión anterior. <br> <b>¡Diligencia los siguientes datos para
+                                comenzar!</b></p>
+                        <p>Nombre de usuario</p>
+                        <input name="nombre de usuario" id="nombreUsuario">
+                        <p>Introduce el valor neto de sus ingresos mensuales (solo números, sin puntos, ni comas, ni
+                            símbolos como $):</p>
+                        <input name="monto disponible" id="montoDisponible">
+                        <button id="registrarUsuario" class="boton">Ingresar</button>
+                    </div>
 
 
-                <div id="menuOpciones" class="oculto">
-                    <div class="d-flex flex-column align-items-center">
+                    <div id="menuOpciones" class="oculto">
+                        <div class="d-flex flex-column align-items-center">
 
-                        <button id="boton1" class="boton">Nuevo gasto</button>
-                        <div id="nuevoGasto" class="oculto flex-column align-items-center">
-                            <p>Introduce el nombre o concepto del gasto a continuación:</p>
-                            <input name="concepto del gasto" id="nombreGasto">
-                            <p>Introduce el valor del gasto a continuación (solo números, sin puntos, ni comas, ni
-                                símbolos
-                                como $):</p>
-                            <input name="monto del gasto" id="montoGasto">
-                            <button id="registrarGasto">Registrar gasto</button>
-                            <button id="cancelar1">Volver</button>
+                            <button id="boton1" class="boton">Nuevo gasto</button>
+                            <div id="nuevoGasto" class="oculto flex-column align-items-center">
+                                <p>Introduce el nombre o concepto del gasto a continuación:</p>
+                                <input name="concepto del gasto" id="nombreGasto">
+                                <p>Introduce el valor del gasto a continuación (solo números, sin puntos, ni comas, ni
+                                    símbolos
+                                    como $):</p>
+                                <input name="monto del gasto" id="montoGasto">
+                                <button id="registrarGasto">Registrar gasto</button>
+                                <button id="cancelar1">Volver</button>
 
+                            </div>
+
+                            <button id="verGastos" class="boton">Ver gastos</button>
+                            <div id="verGastosDiv" class="oculto">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Concepto</th>
+                                            <th>Gasto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablaGastos">
+                                    </tbody>
+                                </table>
+                                <button id="cancelar5" class="boton">Volver</button>
+                            </div>
+
+                            <button id="boton2" class="boton">Nuevo ingreso</button>
+                            <div id="nuevoIngreso" class="oculto flex-column align-items-center">
+                                <p>¿Cuál es el monto que sumarás a tus ingresos disponibles? (solo números, sin puntos,
+                                    ni
+                                    comas
+                                    ni símbolos como $):</p>
+                                <input name="monto de ingreso" id="montoIngreso">
+                                <button id="registrarIngreso">Registrar ingreso</button>
+                                <button id="cancelar2">Volver</button>
+                            </div>
+
+                            <button id="boton3" class="boton">Ahorrar ingresos</button>
+                            <div id="nuevoAhorro" class="oculto flex-column align-items-center">
+                                <p id="textoAhorro"></p>
+                                <input name="porcentaje ahorro" id="porcentajeAhorro">
+                                <button id="registrarAhorro">Registrar Ahorro</button>
+                                <button id="cancelar3">Volver</button>
+                            </div>
+
+                            <button id="boton4" class="boton">Retirar fondos de ahorro</button>
+                            <div id="retirarAhorro" class="oculto flex-column align-items-center">
+                                <p id="textoRetirarAhorro"></p>
+                                <input name="monto a retirar de ahorro" id="montoRetiroAhorro">
+                                <button id="registrarRetiroAhorro">Retirar de ahorros</button>
+                                <button id="cancelar4">Volver</button>
+                            </div>
+
+                            <button id="boton5" class="boton">Guardar datos</button>
+
+                            <button id="boton6" class="boton">Borrar datos</button>
+                            <button id="boton7" class="boton">Cerrar Sesión</button>
                         </div>
-
-                        <button id="verGastos" class="boton">Ver gastos</button>
-                        <div id="verGastosDiv" class="oculto">
-                            <table>
-                                <thead>
-                                  <tr>
-                                    <th>Concepto</th>
-                                    <th>Gasto</th>
-                                  </tr>
-                                </thead>
-                                <tbody id="tablaGastos">
-                                </tbody>
-                              </table>
-                              <button id="cancelar5" class="boton">Volver</button>
-                        </div>
-
-                        <button id="boton2" class="boton">Nuevo ingreso</button>
-                        <div id="nuevoIngreso" class="oculto flex-column align-items-center">
-                            <p>¿Cuál es el monto que sumarás a tus ingresos disponibles? (solo números, sin puntos, ni
-                                comas
-                                ni símbolos como $):</p>
-                            <input name="monto de ingreso" id="montoIngreso">
-                            <button id="registrarIngreso">Registrar ingreso</button>
-                            <button id="cancelar2">Volver</button>
-                        </div>
-
-                        <button id="boton3" class="boton">Ahorrar ingresos</button>
-                        <div id="nuevoAhorro" class="oculto flex-column align-items-center">
-                            <p id="textoAhorro"></p>
-                            <input name="porcentaje ahorro" id="porcentajeAhorro">
-                            <button id="registrarAhorro">Registrar Ahorro</button>
-                            <button id="cancelar3">Volver</button>
-                        </div>
-
-                        <button id="boton4" class="boton">Retirar fondos de ahorro</button>
-                        <div id="retirarAhorro" class="oculto flex-column align-items-center">
-                            <p id="textoRetirarAhorro"></p>
-                            <input name="monto a retirar de ahorro" id="montoRetiroAhorro">
-                            <button id="registrarRetiroAhorro">Retirar de ahorros</button>
-                            <button id="cancelar4">Volver</button>
-                        </div>
-
-                        <button id="boton5" class="boton">Guardar datos</button>
-
-                        <button id="boton6" class="boton">Borrar datos</button>
-                        <button id="boton7" class="boton">Cerrar Sesión</button>
                     </div>
                 </div>
+
+            </div>
+            <div id="credito">
                 <p>Creador por Jesús Morales como proyecto Coder Houser - JavaScript</p>
             </div>
-
         </div>
 
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
